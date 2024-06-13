@@ -4,6 +4,10 @@
 - [tmux installieren](#tmux-installieren)
 - [tmux-Sessions verwalten](#tmux-sessions-verwalten)
 - [Minecraft-Server einrichten](#minecraft-server-einrichten)
+- [Mehr RAM zuweisen](#mehr-ram-zuweisen)
+- [Minecraft-Server-Konfiguration anpassen](#minecraft-server-konfiguration-anpassen)
+- [FTP und WinSCP verwenden](#ftp-und-winscp-verwenden)
+- [Serververwaltung und Konsole](#serververwaltung-und-konsole)
 
 # Erste Schritte
 
@@ -124,4 +128,47 @@ Nun richten wir den Minecraft-Server ein:
     tmux attach-session
     ```
 
-Damit ist der Minecraft-Server auf Ihrem Linux-Server eingerichtet und läuft in einer `tmux`-Sitzung. Sie können den Server verwalten, indem Sie die `tmux`-Sitzung wieder betreten.
+## Mehr RAM zuweisen
+Um dem Minecraft-Server mehr RAM zuzuweisen, können Sie die Startparameter anpassen. Bearbeiten Sie die Startzeile wie folgt:
+
+1. Öffnen Sie `tmux`:
+    ```sh
+    tmux new -s minecraft
+    ```
+2. Starten Sie den Minecraft-Server mit mehr RAM (z.B. 2048 MB):
+    ```sh
+    java -Xmx2048M -Xms2048M -jar minecraft_server.jar nogui
+    ```
+
+## Minecraft-Server-Konfiguration anpassen
+Um die Konfigurationsdateien des Minecraft-Servers zu bearbeiten, verwenden Sie einen Texteditor wie `nano` oder ein FTP-Programm wie WinSCP:
+
+1. Bearbeiten Sie die `server.properties`-Datei:
+    ```sh
+    nano ~/minecraft-server/server.properties
+    ```
+2. Passen Sie die Einstellungen nach Ihren Wünschen an und speichern Sie die Datei (Strg+O, Enter, Strg+X).
+
+## FTP und WinSCP verwenden
+FTP (File Transfer Protocol) ist ein Protokoll zum Übertragen von Dateien zwischen Computern im Netzwerk. WinSCP ist ein beliebtes FTP-Programm, mit dem Sie Dateien zwischen Ihrem lokalen Computer und dem Server übertragen können.
+
+1. Laden Sie [WinSCP](https://winscp.net/) herunter und installieren Sie es.
+2. Starten Sie WinSCP und geben Sie die Verbindungsdetails Ihres Servers ein (Hostname, Benutzername, Passwort).
+3. Navigieren Sie zu Ihrem Minecraft-Server-Verzeichnis (`~/minecraft-server`).
+4. Übertragen Sie Dateien per Drag-and-Drop zwischen Ihrem lokalen Computer und dem Server.
+
+## Serververwaltung und Konsole
+Um den Server zu verwalten und die Konsole zu verwenden, können Sie sich über SSH mit Ihrem Server verbinden und `tmux` verwenden:
+
+1. Öffnen Sie die PowerShell auf Ihrem lokalen Computer.
+2. Stellen Sie eine SSH-Verbindung zu Ihrem Server her:
+    ```sh
+    ssh your-username@your-server-ip
+    ```
+3. Wechseln Sie in die `tmux`-Session:
+    ```sh
+    tmux attach-session -t minecraft
+    ```
+4. Jetzt können Sie Befehle in der Minecraft-Server-Konsole eingeben und den Server verwalten.
+
+Damit haben Sie alle grundlegenden Schritte zur Einrichtung und Verwaltung Ihres Minecraft-Servers auf einem Linux-Server durchlaufen.
