@@ -172,3 +172,6 @@ Um den Server zu verwalten und die Konsole zu verwenden, können Sie sich über 
 4. Jetzt können Sie Befehle in der Minecraft-Server-Konsole eingeben und den Server verwalten.
 
 Damit haben Sie alle grundlegenden Schritte zur Einrichtung und Verwaltung Ihres Minecraft-Servers auf einem Linux-Server durchlaufen.
+
+## Trello für Projektmanagement
+Für die Verwaltung und Organisation Ihres Minecraft-Projekts können Sie Trello verwenden. Hier ist der Link zu Ihrem Trello-Board: [TGM Minecraft Trello](https://trello.com/b/SNTlSKTi/tgm-minecraft). Sie können Aufgaben, Fortschritte und Ideen für Ihr Projekt dort organisieren.
