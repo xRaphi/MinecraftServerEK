@@ -2,6 +2,7 @@
 [Erste Schritte](#erste-schritte)
 - [Server vorbereiten](#server-vorbereiten)
 - [tmux installieren](#tmux-installieren)
+- [tmux-Sessions verwalten](#tmux-sessions-verwalten)
 - [Minecraft-Server einrichten](#minecraft-server-einrichten)
 
 # Erste Schritte
@@ -26,6 +27,65 @@ Um einen Minecraft-Server auf einem gemieteten Linux-Server einzurichten, benöt
     tmux -V
     ```
    Dies sollte die installierte Version von `tmux` anzeigen.
+
+## tmux-Sessions verwalten
+Mit `tmux` können Sie verschiedene Sessions erstellen und verwalten. Hier sind einige grundlegende Befehle:
+
+- Starten einer neuen `tmux`-Session:
+    ```sh
+    tmux
+    tmux new
+    tmux new-session
+    tmux new -s mysession
+    ```
+    Mit dem Befehl `tmux new -s mysession` können Sie eine Session mit dem Namen `mysession` erstellen.
+
+- Starten oder Anfügen an eine existierende Session:
+    ```sh
+    tmux new-session -A -s mysession
+    ```
+    Dieser Befehl startet eine neue Session oder fügt sich an eine existierende Session mit dem Namen `mysession` an.
+
+- Auflisten aller Sessions:
+    ```sh
+    tmux ls
+    tmux list-sessions
+    ```
+
+- An eine existierende Session anhängen:
+    ```sh
+    tmux attach
+    tmux attach-session
+    tmux a
+    tmux at
+    tmux attach -t mysession
+    tmux attach-session -t mysession
+    ```
+    Diese Befehle hängen sich an die letzte oder eine spezifizierte Session mit dem Namen `mysession` an.
+
+- Session umbenennen:
+    ```sh
+    Ctrl+b, dann Shift+s
+    ```
+
+- Session verlassen, ohne sie zu beenden:
+    ```sh
+    Ctrl+b, dann d
+    ```
+
+- Andere Clients von der Session trennen:
+    ```sh
+    tmux attach-session -d
+    ```
+
+- Session beenden:
+    ```sh
+    tmux kill-session -t mysession
+    tmux kill-ses -t mysession
+    tmux kill-session -a
+    tmux kill-session -a -t mysession
+    ```
+    Diese Befehle beenden eine oder alle Sessions außer der aktuellen.
 
 ## Minecraft-Server einrichten
 Nun richten wir den Minecraft-Server ein:
