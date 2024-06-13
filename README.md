@@ -177,4 +177,4 @@ Ein Kollege und ich haben ein einfaches TPA (Teleportation) Spigot Plugin progra
 
 ---
 
-Für die Verwaltung und Organisation Ihres Minecraft-Projekts können Sie Trello verwenden. Hier ist der Link zu Ihrem Trello-Board: [TGM Minecraft Trello](https://trello.com/b/SNTlSKTi/tgm-minecraft). Sie können Aufgaben, Fortschritte und Ideen für Ihr Projekt dort organisieren.
+Für die Verwaltung von unserem Minecraft-Projekts haben wir Trello verwendet. Hier ist der Link zu Unserem Trello-Board: [TGM Minecraft Trello](https://trello.com/b/SNTlSKTi/tgm-minecraft).
