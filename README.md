@@ -1,1 +1,67 @@
-# MinecraftServerEK
+# Inhaltsverzeichnis
+[Erste Schritte](#erste-schritte)
+- [Server vorbereiten](#server-vorbereiten)
+- [tmux installieren](#tmux-installieren)
+- [Minecraft-Server einrichten](#minecraft-server-einrichten)
+
+# Erste Schritte
+
+## Server vorbereiten
+Um einen Minecraft-Server auf einem gemieteten Linux-Server einzurichten, benötigen wir einige grundlegende Schritte. Wir werden `tmux` installieren und dann den Minecraft-Server einrichten.
+
+## tmux installieren
+`tmux` ist ein Terminal-Multiplexer, der es ermöglicht, mehrere Terminal-Sitzungen zu erstellen und zwischen ihnen zu wechseln. So installieren Sie `tmux`:
+
+1. Melden Sie sich auf Ihrem Linux-Server an.
+2. Aktualisieren Sie die Paketliste:
+    ```sh
+    sudo apt update
+    ```
+3. Installieren Sie `tmux`:
+    ```sh
+    sudo apt install tmux
+    ```
+4. Überprüfen Sie die Installation:
+    ```sh
+    tmux -V
+    ```
+   Dies sollte die installierte Version von `tmux` anzeigen.
+
+## Minecraft-Server einrichten
+Nun richten wir den Minecraft-Server ein:
+
+1. Erstellen Sie ein Verzeichnis für den Minecraft-Server:
+    ```sh
+    mkdir ~/minecraft-server
+    cd ~/minecraft-server
+    ```
+2. Laden Sie die neueste Minecraft-Server-JAR-Datei herunter:
+    ```sh
+    wget https://launcher.mojang.com/v1/objects/<server-version>.jar -O minecraft_server.jar
+    ```
+    Ersetzen Sie `<server-version>` durch die aktuelle Version. Die neueste Version finden Sie auf der [Minecraft-Website](https://www.minecraft.net/en-us/download/server).
+
+3. Akzeptieren Sie die EULA:
+    ```sh
+    echo "eula=true" > eula.txt
+    ```
+4. Starten Sie `tmux`:
+    ```sh
+    tmux
+    ```
+5. Starten Sie den Minecraft-Server in einer `tmux`-Sitzung:
+    ```sh
+    java -Xmx1024M -Xms1024M -jar minecraft_server.jar nogui
+    ```
+    Dies startet den Minecraft-Server ohne grafische Benutzeroberfläche.
+
+6. Um die `tmux`-Sitzung zu verlassen, ohne den Server zu stoppen, drücken Sie:
+    ```sh
+    Ctrl+b, dann d
+    ```
+7. Um später zur `tmux`-Sitzung zurückzukehren, verwenden Sie:
+    ```sh
+    tmux attach-session
+    ```
+
+Damit ist der Minecraft-Server auf Ihrem Linux-Server eingerichtet und läuft in einer `tmux`-Sitzung. Sie können den Server verwalten, indem Sie die `tmux`-Sitzung wieder betreten.
