@@ -1,5 +1,4 @@
-```java
-package com.deinname.simpletpa;
+package com.rtroppmann.simpletpa;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
